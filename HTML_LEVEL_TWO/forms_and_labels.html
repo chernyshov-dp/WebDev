@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and labels</title>
+</head>
+<body>
+    <form>
+        <p>Enter email:</p>
+        <input type="email" name="useremail" value="">
+        <input type="submit" name="" value="Submit">
+    </form>
+
+    <form action="https://www.google.com" method="GET">
+        <p>Enter text and take me to Google:</p>
+        <input type="text" name="userinput" value="">
+        <input type="submit" name="" value="Submit">
+    </form>
+
+    <form>
+        <!-- Label without for -->
+        <label>
+            Enter text:
+            <input type="text" name="" value="block one">
+        </label>
+        <label>
+            Enter text:
+            <input type="text" name="" value="block two">
+        </label>
+    </form>
+    
+    <form>
+        <!-- Using a Label with for-->
+        <label for="userinput">Enter input:</label>
+
+        <input type="text" name="" placeholder="Enter email here" id="userinput">
+    </form>
+
+    <form>
+        <input type="text" name="" placeholder="not required">
+        <input type="text" name="" placeholder="Required" required>
+        <input type="submit" name="" value="Submit">
+    </form>
+</body>
+</html>
