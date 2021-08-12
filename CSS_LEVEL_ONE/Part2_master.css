@@ -1,0 +1,20 @@
+body{
+    background: url(https://static.retreatmi.com/files/destinations-logo/5e5224aa3718e.jpg);
+    background-repeat: repeat;
+}
+
+div{
+    background: blue;
+    border-color: orange;
+    border-width: 2px;
+    border-style: double;
+}
+
+p{
+    color: yellow;
+}
+
+span{
+    background: red;
+    color: black;
+}

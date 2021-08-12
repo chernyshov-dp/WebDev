@@ -1,0 +1,29 @@
+.firstDiv{
+    color: blue;
+}
+
+.secondDiv{
+    color: red;
+}
+
+#singledout{
+    color: green;
+    text-decoration: line-through;
+}
+
+/* *{
+    color: black;
+} */
+
+h3 + ul{
+    border: 4px dotted purple;
+}
+
+li a{
+    color: red;
+}
+
+li a[href="https://github.com/chernyshov-dev"]{
+    color: blue;
+    border: 5px solid orange;
+}

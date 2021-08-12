@@ -1,0 +1,21 @@
+/* This is a comment */
+
+/* selected tag{
+    property: value;
+} */
+
+h1{
+    color: blue;
+}
+
+li{
+    color: rgb(204, 51, 153);
+}
+
+p{
+    color: #1aa3ff;
+}
+
+h4{
+    color: rgba(255, 26, 26, 0.5);
+}
