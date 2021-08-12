@@ -1,0 +1,37 @@
+/* 1em = 2px
+2em = 32px */
+
+/* h1{
+    font-family: "Arial";
+}
+
+p{
+    font-family: monospace;
+}
+
+body{
+    font-size: 20px;
+}
+
+#two{
+    font-size: 1.0em;
+}
+
+p{
+    font-style: italic;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+} */
+
+h1{
+    font-family: "Arial";
+}
+
+p { 
+    font-family: 'HelvetiaVerbundeneRegular'; 
+    font-weight: normal; 
+    font-style: normal; 
+ }

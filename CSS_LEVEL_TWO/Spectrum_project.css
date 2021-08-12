@@ -1,0 +1,56 @@
+h1, h5{
+    text-align: center;
+    font-family: 'Georama', sans-serif;
+}
+
+.art{
+    margin: auto;
+}
+
+td{
+    height: 300px;
+    width: 100px;
+    border: 3px solid white;
+}
+
+#one{
+    background-color: #7400B8;
+}
+
+#two{
+    background-color: #6930C3;
+}
+
+#three{
+    background-color: #5E60CE;
+}
+
+#four{
+    background-color: #5390D9;
+}
+
+#five{
+    background-color: #4EA8DE;
+}
+
+#six{
+    background-color: #48BFE3;
+}
+
+#seven{
+    background-color: #56CFE1;
+}
+
+#eight{
+    background-color: #65DFDF;
+}
+
+#nine{
+    background-color: #72EFDD;
+}
+
+#ten{
+    background-color: #80FFDB;
+}
+
+
