@@ -1,0 +1,43 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #001a4d;
+    margin: 0px;
+    color: white;
+    text-align: center;
+    border: 50px solid #0aa5a5;
+    border-top: 0px;
+}
+
+p[id="first"], p[id="second"]{
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    /* margin-top: 80px;
+    margin-bottom: 60px;
+    margin-left: 300px;
+    margin-right: 300px; */
+    font-size: 18px;
+}
+
+p[id="second"]{
+    padding-bottom: 3%;
+}
+
+h4{
+    margin: 0px;
+}
+
+#first, #second{
+ text-decoration-color: brown;
+}
+
+input[type="submit"]{
+    font-family: 'Poppins', sans-serif;
+    background-color: gold;
+    font-size: 30px;
+    border-radius: 25px;
+}
+
+input[type="text"], input[type="email"]{
+    font-size: 30px;
+}
