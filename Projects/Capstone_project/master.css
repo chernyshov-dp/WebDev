@@ -27,10 +27,6 @@ h4{
     margin: 0px;
 }
 
-#first, #second{
- text-decoration-color: brown;
-}
-
 input[type="submit"]{
     font-family: 'Poppins', sans-serif;
     background-color: gold;
