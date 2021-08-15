@@ -33,8 +33,8 @@ var total = bankAccount + deposit;
 total;
 
 var greeting = "Welcome back ";
-var first_name = "Daniil";
-alert(greeting + first_name);
+var firstName = "Daniil";
+alert(greeting + firstName);
 
 var bonus = null;
 
