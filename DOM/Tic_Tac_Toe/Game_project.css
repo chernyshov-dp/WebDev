@@ -1,13 +1,8 @@
-#gameTable{
-    margin: auto;
-    table-layout: fixed;
-    padding: 50px;
+td {
+    height: 150px;
+    width: 150px;
     text-align: center;
     border: 5px solid black;
-}
-
-th, td {
-    padding: 40px;
-    border: 5px solid black;
-    font-size: 40px;
+    font-size: 100px;
  }
+ 
