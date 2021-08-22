@@ -9,8 +9,6 @@ function clearTable() {
 
 restartButton.addEventListener("click", clearTable)
 
-cellOne = document.querySelector("#one");
-
 function changeMarker() {
     if (this.textContent == "") {
         this.textContent = "X";
