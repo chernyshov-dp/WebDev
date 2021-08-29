@@ -40,7 +40,16 @@ class Deck:
     the players. It will use SUITE and RANKS to create the deck. It should also
     have a method for splitting/cutting the deck in half and Shuffling the deck.
     """
-    pass
+    def __init__(self):
+        print("Creating new ordered deck!")
+        self.all_cards = [(s, r) for s in SUITE for r in RANKS]
+
+    def shuffle(self):
+        print("SHUFFLING DECK")
+        shuffle(self.all_cards)
+
+    def split_in_half(self):
+        return self.all_cards[:26], self.all_cards[26:]
 
 
 class Hand:
@@ -48,22 +57,104 @@ class Hand:
     This is the Hand class. Each player has a Hand, and can add or remove
     cards from that hand. There should be an add and remove card method here.
     """
+    def __init__(self, cards):
+        self.cards = cards
 
-    def __init__(self, player):
-        self.player = player
+    def __str__(self):
+        return f"Contains {len(self.cards)} cards"
+
+    def add(self, added_cards):
+        self.cards.extend(added_cards)
+
+    def remove_card(self):
+        return self.cards.pop()
 
 
 class Player:
     """
     This is the Player class, which takes in a name and an instance of a Hand
-    class object. The Payer can then play cards and check if they still have cards.
+    class object. The Player can then play cards and check if they still have cards.
     """
-    pass
+    def __init__(self, name, hand):
+        self.name = name
+        self.hand = hand
+
+    def play_card(self):
+        drawn_card = self.hand.remove_card()
+        print(f"{self.name} has placed {drawn_card}")
+        print("\n")
+        return drawn_card
+
+    def remove_war_cards(self):
+        war_cards = []
+        if len(self.hand.cards) < 3:
+            return self.hand.cards
+
+        else:
+            for i in range(3):
+                war_cards.append(self.hand.remove_card())
+            return war_cards
+
+    def still_has_cards(self):
+        """
+        Return True if player still has cards left
+        """
+        return len(self.hand.cards) != 0
 
 
 ######################
 #### GAME PLAY #######
 ######################
-print("Welcome to War, let's begin...")
 
-# Use the 3 classes along with some logic to play a game of war!
+print("Welcome to War, let's begin...")
+# Create new deck and split in half
+d = Deck()
+d.shuffle()
+half1, half2 = d.split_in_half()
+
+# Create both players
+comp = Player("Computer", Hand(half1))
+player_name = input("What is your name: ")
+user = Player(player_name, Hand(half2))
+
+total_rounds = 0
+war_count = 0
+
+while user.still_has_cards() and comp.still_has_cards():
+    total_rounds += 1
+    print("TIME FOR A NEW ROUND!")
+    print("here are the current standings")
+    print(f"{user.name} has the count: {len(user.hand.cards)}")
+    print(f"{comp.name} has the count: {len(comp.hand.cards)}")
+    print("play a card!")
+    print("\n")
+
+    table_cards = []
+
+    c_card = comp.play_card()
+    p_card = user.play_card()
+
+    table_cards.append(c_card)
+    table_cards.append(p_card)
+
+    if c_card[1] == p_card[1]:
+        war_count += 1
+
+        print("WAR!")
+
+        table_cards.extend(user.remove_war_cards())
+        table_cards.extend(comp.remove_war_cards())
+
+        if RANKS.index(c_card[1]) < RANKS.index(p_card[1]):
+            user.hand.add(table_cards)
+        else:
+            comp.hand.add(table_cards)
+
+    else:
+        if RANKS.index(c_card[1]) < RANKS.index(p_card[1]):
+            user.hand.add(table_cards)
+        else:
+            comp.hand.add(table_cards)
+
+print(f"GAME OVER\nNumber of rounds {total_rounds}\nA war happened {war_count} times")
+print(f"THE WINNER IS: {'COMPUTER' if comp.still_has_cards() else player_name}")
