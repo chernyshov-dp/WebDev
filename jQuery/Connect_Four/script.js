@@ -35,14 +35,49 @@ function colorMatchCheck(one, two, three, four) {
     return (one === two && one === three && one === four && one !== "rgb(128, 128, 128)" && one !== undefined);
 }
 
+// Check for horizontal wins
 function horizontalWinCheck(){
-    return 0;
+    for (var row = 0; row < 6; row++) {
+        for (var col = 0; col < 4; col++) {
+            if (colorMatchCheck(returnColor(row, col), returnColor (row, col + 1), returnColor(row, col + 2), returnColor(row, col + 3))) {
+                console.log("Horizontal win");
+                reportWin(row, col);
+                return true;
+            } else {
+                continue;
+            }
+        }
+    }
 }
 
+// Check for vertical wins
 function VerticalWinCheck() {
-    return 0;
+    for (var col = 0; col < 7; col++) {
+        for (var row = 0; row < 3; row++) {
+            if (colorMatchCheck(returnColor(row, col), returnColor (row + 1, col), returnColor(row + 2, col), returnColor(row + 3, col))) {
+                console.log("Vertical win");
+                reportWin(row, col);
+                return true;
+            } else {
+                continue;
+            }
+        }
+    }
 }
 
-function diagonalWinCheck(p) {
-    return 0;
+// Check for diagonal wins
+function diagonalWinCheck() {
+    for (var col = 0; col < 5; col++) {
+        for (var row = 0; row < 7; row++) {
+            if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col+1) ,returnColor(row+2,col+2), returnColor(row+3,col+3))) {
+                console.log("Diagonal win");
+                reportWin(row, col);
+                return true;
+            } else if (colorMatchCheck(returnColor(row,col), returnColor(row-1,col+1) ,returnColor(row-2,col+2), returnColor(row-3,col+3))) {
+                console.log("Diagonal win");
+                reportWin(row, col);
+                return true;
+            }
+        }
+    }
 }
