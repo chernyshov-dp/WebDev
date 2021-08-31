@@ -26,3 +26,7 @@ ENV/
 env.bak/
 venv.bak/
 
+# Django stuff
+*.log
+settings.py
+
