@@ -8,8 +8,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "first_project.settings")
 django.setup()
 from first_app.models import AccessRecord, Webpage, Topic
 
-django.setup()
-
 # FAKE POP SCRIPT
 fakegen = Faker()
 topics = ["Search", "Social", "Marketplace", "News", "Games"]
