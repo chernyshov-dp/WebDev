@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Two exercise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Hello!</h1>
+    <h2>This is a fake users table</h2>
+
+    <div class="exercise">
+        {% if user_info %}
+        <table>
+            <thead>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+            </thead>
+
+            {% for usr in user_info %}
+            <tr>
+                <td>{{ usr.first_name }}</td>
+                <td>{{ usr.last_name}}</td>
+                <td>{{ usr.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+        <p>NO USER INFO FOUND!</p>
+
+        {% endif %}
+    </div>
+</body>
+</html>
