@@ -1,10 +1,20 @@
 from django.shortcuts import render
 from AppTwo.models import User
-# Create your views here.
+from . import forms
 
 
 def index(request):
-    return render(request, 'AppTwo/index.html')
+    form = forms.SignUpForm()
+
+    if request.method == "POST":
+        form = forms.SignUpForm(request.POST)
+
+    if form.is_valid():
+        print("VALIDATION SUCCESS!")
+        print("First name: " + form.cleaned_data['first_name'])
+        print("Last name: " + form.cleaned_data['last_name'])
+        print("Email: " + form.cleaned_data['email'])
+    return render(request, 'AppTwo/index.html', {'form': form})
 
 
 def users(request):
