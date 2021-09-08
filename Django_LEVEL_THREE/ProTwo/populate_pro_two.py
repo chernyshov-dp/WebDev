@@ -18,6 +18,7 @@ def populate(n=10):
 
         user = User.objects.get_or_create(first_name=fake_first_name, last_name=fake_last_name, email=fake_email)[0]
 
+
 if __name__ == '__main__':
     print("Populating script!")
     populate(50)
