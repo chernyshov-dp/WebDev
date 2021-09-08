@@ -1,0 +1,7 @@
+h2 {
+    color: plum;
+}
+
+.thead, th, td {
+    border: 2px solid black;
+}
