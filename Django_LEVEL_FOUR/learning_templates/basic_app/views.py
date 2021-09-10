@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'basic_app/index.html')
+    context_dict = {'text': "Hello world", 'number': 100}
+    return render(request, 'basic_app/index.html', context_dict)
 
 
 def other(request):

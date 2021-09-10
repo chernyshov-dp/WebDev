@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 {% extends "basic_app/base.html" %}
+{% load my_extras %}
     {% block body_block %}
         <h1>Welcome to index!</h1>
         <h2>This is index.html page showing!</h2>
+        <!--Convert "text "into lower case then cut "hello" and then use title function-->
+        <h1>{{ text|lower|cut_it:'world'|title }}</h1>
+        <h1>{{ number|add:"99" }}</h1>
     {% endblock %}
