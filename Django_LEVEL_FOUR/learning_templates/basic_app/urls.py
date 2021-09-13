@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views # from basic_app import views
+from . import views  # from basic_app import views
 
 # TEMPLATE TAGGING
 app_name = 'basic_app'
