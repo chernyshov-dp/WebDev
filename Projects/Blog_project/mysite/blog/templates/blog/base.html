@@ -25,7 +25,7 @@
     <nav class="navbar navbar-default techfont custom-navbar">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li><a class="navbar-brand bigbrand" href="{% url post_list %}">My blog</a></li>
+                <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My blog</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="https://github.com/chernyshov-dev">GitHub</a></li>
                 <li><a href="https://www.linkedin.com">LinkedIn</a></li>
@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="blog_posts">
-                    {% blog content %}
+                    {% block content %}
                     {% endblock %}
                 </div>
             </div>
