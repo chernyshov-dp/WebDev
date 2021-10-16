@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
                 {% else %}
                     <li><a href="#">Groups</a></li>
                     <li><a href="{% url 'accounts:login' %}">Log in</a></li>
-                    <li><a href="{% url 'accounts:signup' %}"></a>Sign up</li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
                 {% endif %}
             </ul>
         </div>
