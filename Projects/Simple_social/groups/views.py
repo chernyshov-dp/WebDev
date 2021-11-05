@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from django.db import IntegrityError
 
 from groups.models import Group, GroupMember
+from . import models
 
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
@@ -31,7 +32,7 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
         group = get_object_or_404(Group, slug=self.kwargs.get('slug'))
 
         try:
-            GroupMember.object.create(user=self.request.user, group=group)
+            GroupMember.objects.create(user=self.request.user, group=group)
         except IntegrityError:
             messages.warning(self.request, 'Warning already a member!')
         else:
@@ -47,7 +48,7 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
 
     def get(self, request, *args, **kwargs):
         try:
-            membership = models.GroupMember.object.filter(
+            membership = models.GroupMember.objects.filter(
                 user=self.request.user,
                 group__slug=self.kwargs.get('slug')
             ).get()
