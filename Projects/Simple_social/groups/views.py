@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.urls import reverse
 from django.views import generic
 from django.shortcuts import get_object_or_404
+from django.db import IntegrityError
 
 from groups.models import Group, GroupMember
 
