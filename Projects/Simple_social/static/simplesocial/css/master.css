@@ -4,3 +4,10 @@ body {
   background-color: black;
   color: white;
 }
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
