@@ -30,4 +30,3 @@ venv.bak/
 *.log
 settings.py
 db.sqlite3
-
